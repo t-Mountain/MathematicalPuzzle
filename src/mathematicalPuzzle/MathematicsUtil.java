@@ -48,5 +48,40 @@ public class MathematicsUtil {
 			return sum;
 		}
 	}
+	
+	/**
+	 * パーミュテーションを計算するメソッド</br>
+	 * 以下の場合0を返す</br>
+	 * ・m、nいずれかが0より小さい場合<br>
+	 * ・nがmより大きい場合</br>
+	 * どこまで計算可能か調査できていない。long値の最大を超えるケースの調査が必要。
+	 * @param m:選ばれる数
+	 * @param n:mから選ぶ数
+	 * @return 順列の結果
+	 */
+	public static long permutation(long m, long n) {
+		
+		if(m <0 || n <0) {
+			return 0;
+		}
+		
+		if(n > m) {
+			return 0;
+		}else if(m == n || n == 0) {
+			return 1;
+		}
+		
+		if(n == 1) {
+			return m;
+		}
+		
+		long num = m;
+		for(int i=0; i<n-1; i++) {
+			m = m-1;
+			num = num*m;
+		}
+		
+		return num;
+	}
 
 }
