@@ -63,5 +63,4 @@ public class MathematicsUtilTest {
 		assertThat(MathematicsUtil.permutation(50,10), is(37276043023296000L));
 		
 	}
-
 }

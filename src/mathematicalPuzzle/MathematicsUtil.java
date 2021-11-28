@@ -83,5 +83,19 @@ public class MathematicsUtil {
 		
 		return num;
 	}
-
+	
+	public static int exponentiation(int base, int exponent) {
+		int result=base;
+		
+		if(exponent==0) {
+			return 1;
+		} else if(exponent == 1) {
+			return base;
+		} else {
+			for(int i=0; i<exponent-1; i++) {
+				result = result*base;
+			}
+			return result;
+		}
+	}
 }
